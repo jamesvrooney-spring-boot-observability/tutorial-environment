@@ -1,6 +1,6 @@
 # Sample application for tutorials
 
-This repository contains the environment for completing the tutorials at [grafana.com/tutorials](https://grafana.com/tutorials).
+This repository contains the environment for completing the tutorials at [grafana.com/tutorials/grafana-fundamentals](https://grafana.com/tutorials/grafana-fundamentals).
 
 ## Prequisites
 
