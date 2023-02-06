@@ -2,6 +2,10 @@
 
 This repository contains the environment for completing the tutorials at [grafana.com/tutorials/grafana-fundamentals](https://grafana.com/tutorials/grafana-fundamentals).
 
+```
+git clone https://grafana.com/tutorials/grafana-fundamentals
+```
+
 ## Prequisites
 
 You will need to have the following installed locally to complete this workshop:
