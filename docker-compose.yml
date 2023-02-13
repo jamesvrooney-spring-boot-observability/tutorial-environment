@@ -1,14 +1,7 @@
-version: "3"
-
-networks:
-  grafana:
-
-volumes:
-  app_data: {}
-
 services:
   prometheus:
     image: prom/prometheus:v2.34.0
+    container_name: prometheus
     volumes:
       - ./prometheus/:/etc/prometheus/
     command:
@@ -21,6 +14,7 @@ services:
 
   loki:
     image: grafana/loki:2.4.2
+    container_name: loki
     ports:
       - 3100:3100
     command: -config.file=/etc/loki/local-config.yaml
@@ -29,6 +23,7 @@ services:
 
   promtail:
     image: grafana/promtail:2.0.0
+    container_name: promtail
     volumes:
       - app_data:/var/log
     networks:
@@ -36,6 +31,7 @@ services:
 
   grafana:
     image: grafana/grafana:8.4.5
+    container_name: grafana
     ports:
       - 3000:3000
     networks:
@@ -46,6 +42,7 @@ services:
 
   app:
     build: ./app
+    container_name: jr_go_app
     ports:
       - 8081:80
     volumes:
@@ -55,7 +52,14 @@ services:
 
   db:
     image: grafana/tns-db:latest
+    container_name: tns-db
     ports:
       - 8082:80
     networks:
       - grafana
+
+networks:
+  grafana:
+
+volumes:
+  app_data: {}
